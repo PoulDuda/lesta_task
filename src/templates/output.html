@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesta Games</title>
+     <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <h1>Результат</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Слово</th>
+                <th>Количество повторений</th>
+                <th>TF</th>
+                <th>IDF</th>
+            </tr>
+        </thead>
+        <tbody id="words-table">
+            {% for word, values in data.words %}
+                <tr>
+                    <td>{{ word }}</td>
+                    <td>{{ values.number_of_times }}</td>
+                    <td>{{ values.tf }}</td>
+                    <td>{{ values.idf }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
